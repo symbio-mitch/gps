@@ -170,6 +170,7 @@ config = {
     'agent': agent,
     'gui_on': True,
     'algorithm': algorithm,
+    'seed': 0,
 }
 
 common['info'] = generate_experiment_info(config)

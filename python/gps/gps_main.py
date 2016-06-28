@@ -338,8 +338,12 @@ def main():
         import numpy as np
         import matplotlib.pyplot as plt
 
-        random.seed(0)
-        np.random.seed(0)
+        if 'seed' in hyperparams.config:
+          random.seed(hyperparams.config['seed'])
+          np.random.seed(hyperparams.config['seed'])
+        else:
+          random.seed(0)
+          np.random.seed(0)
 
         data_files_dir = exp_dir + 'data_files/'
         data_filenames = os.listdir(data_files_dir)
@@ -365,8 +369,12 @@ def main():
         import numpy as np
         import matplotlib.pyplot as plt
 
-        random.seed(0)
-        np.random.seed(0)
+        if 'seed' in hyperparams.config:
+          random.seed(hyperparams.config['seed'])
+          np.random.seed(hyperparams.config['seed'])
+        else:
+          random.seed(0)
+          np.random.seed(0)
 
         gps = GPSMain(hyperparams.config)
         if hyperparams.config['gui_on']:
