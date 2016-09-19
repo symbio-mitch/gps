@@ -230,7 +230,7 @@ source .bashrc
 
 ###### 1. Start the controller
 
-Note: You may find it helpful early on to edit the default ur<5/10>.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
+Note: You may find it helpful early on to edit the default ur<5/10>.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR, 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
 
 Launch gazebo and spawn a UR<5/10> inside of it.
 
