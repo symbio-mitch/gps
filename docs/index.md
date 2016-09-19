@@ -230,17 +230,17 @@ source .bashrc
 
 ###### 1. Start the controller
 
-Note: You may find it helpful early on to edit the default urX.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
+Note: You may find it helpful early on to edit the default ur<5/10>.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
 
-Launch gazebo and spawn a URX inside of it.
+Launch gazebo and spawn a UR<5/10> inside of it.
 
 ```sh
 roslaunch ur_gazebo ur<5/10>.launch
 ```
 
-Now you're ready to run the examples via gps_main. This can be done on any machine as long as the variabls are set appropriately.
+Now you're ready to run the examples via gps_main. This can be done on any machine as long as the variables are set appropriately.
 
-The fisrt example starts with a default initial controller and learns to move the end effector joint to a specified location.
+The first example starts with a default initial controller and learns to move the end effector joint to a specified location.
 
 Run the following from the gps directory:
 
