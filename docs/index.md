@@ -213,47 +213,6 @@ The robot learns a neural network policy for inserting the peg under varying ini
 
 To tinker with the hyperparameters and input, take a look at `experiments/mjc_badmm_example/hyperparams.py`.
 
-#### Simulated UR example
-
-To run the code on a simulated UR be sure to first follow the instructions above for ROS setup.
-
-You must also set an environmental variable UR_PATH that makes gps aware of the location of the installed universal_robot package. You can do this be adding the following to your .bashrc.
-
-```sh
-export UR_PATH=/path/to/universal_robot
-```
-
-After adding this line run:
-```sh
-source .bashrc
-```
-
-###### 1. Start the controller
-
-Note: You may find it helpful early on to edit the default ur<5/10>.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR, 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
-
-Launch gazebo and spawn a UR<5/10> inside of it.
-
-```sh
-roslaunch ur_gazebo ur<5/10>.launch
-```
-
-Now you're ready to run the examples via gps_main. This can be done on any machine as long as the variables are set appropriately.
-
-The first example starts with a default initial controller and learns to move the end effector joint to a specified location.
-
-Run the following from the gps directory:
-
-```sh
-python python/gps/gps_main.py ur_example
-```
-
-The second example trains a neural network policy to reach a goal pose from different starting positions, using guided policy search.
-
-```sh
-python python/gps/gps_main.py ur_caffe_example
-```
-
 #### PR2 example
 
 To run the code on a real or simulated PR2, be sure to first follow the instructions above for ROS setup.
@@ -327,6 +286,47 @@ To learn how to make your own experiment and/or set your own initial and target 
     ```
 
 All of the output logs and data will be routed to your experiment directory. For more details, see [intended usage](usage.html).
+
+#### Simulated UR example
+
+To run the code on a simulated UR be sure to first follow the instructions above for ROS setup.
+
+You must also set an environmental variable UR_PATH that makes gps aware of the location of the installed universal_robot package. You can do this be adding the following to your .bashrc.
+
+```sh
+export UR_PATH=/path/to/universal_robot
+```
+
+After adding this line run:
+```sh
+source .bashrc
+```
+
+###### 1. Start the controller
+
+Note: You may find it helpful early on to edit the default ur<5 or 10>.launch file in the ur_gazebo package by changing the -z argument in the spawn_gazebo_model node from .1 to a larger number like 5.  This will place the simulated UR, 5 meters above the ground rather than .1 removing the potential for the robot to interact with the ground.
+
+Launch gazebo and spawn a UR<5 or 10> inside of it.
+
+```sh
+roslaunch ur_gazebo ur<5 or 10>.launch
+```
+
+Now you're ready to run the examples via gps_main. This can be done on any machine as long as the variables are set appropriately.
+
+The first example starts with a default initial controller and learns to move the end effector joint to a specified location.
+
+Run the following from the gps directory:
+
+```sh
+python python/gps/gps_main.py ur_example
+```
+
+The second example trains a neural network policy to reach a goal pose from different starting positions, using guided policy search.
+
+```sh
+python python/gps/gps_main.py ur_caffe_example
+```
 
 *****
 
