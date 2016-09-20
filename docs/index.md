@@ -263,30 +263,6 @@ python python/gps/gps_main.py pr2_badmm_example
 
 To learn how to make your own experiment and/or set your own initial and target positions, see [the next section](#running-a-new-experiment)
 
-#### Running a new experiment
-1. Set up a new experiment directory by running:
-    ```sh
-    python python/gps/gps_main.py my_experiment -n
-    ```
-    This will create a new directory called my_experiment/ in the experiments directory, with a blank hyperparams.py file.
-
-2. Fill in a hyperparams.py file in your experiment. See [pr2_example](https://github.com/cbfinn/gps/blob/master/experiments/pr2_example/hyperparams.py) and [mjc_example](https://github.com/cbfinn/gps/blob/master/experiments/mjc_example/hyperparams.py) for examples.
-
-3. If you wish to set the initial and/or target positions for the pr2 robot agent, run target setup:
-
-    ```sh
-    python python/gps/gps_main.py my_experiment -t
-    ```
-
-    See the [GUI documentation](gui.html) for details on using the GUI.
-
-4. Finally, run your experiment
-    ```sh
-    python python/gps/gps_main.py my_experiment
-    ```
-
-All of the output logs and data will be routed to your experiment directory. For more details, see [intended usage](usage.html).
-
 #### Simulated UR example
 
 To run the code on a simulated UR be sure to first follow the instructions above for ROS setup.
@@ -327,6 +303,30 @@ The second example trains a neural network policy to reach a goal pose from diff
 ```sh
 python python/gps/gps_main.py ur_caffe_example
 ```
+
+#### Running a new experiment
+1. Set up a new experiment directory by running:
+    ```sh
+    python python/gps/gps_main.py my_experiment -n
+    ```
+    This will create a new directory called my_experiment/ in the experiments directory, with a blank hyperparams.py file.
+
+2. Fill in a hyperparams.py file in your experiment. See [pr2_example](https://github.com/cbfinn/gps/blob/master/experiments/pr2_example/hyperparams.py) and [mjc_example](https://github.com/cbfinn/gps/blob/master/experiments/mjc_example/hyperparams.py) for examples.
+
+3. If you wish to set the initial and/or target positions for the pr2 robot agent, run target setup:
+
+    ```sh
+    python python/gps/gps_main.py my_experiment -t
+    ```
+
+    See the [GUI documentation](gui.html) for details on using the GUI.
+
+4. Finally, run your experiment
+    ```sh
+    python python/gps/gps_main.py my_experiment
+    ```
+
+All of the output logs and data will be routed to your experiment directory. For more details, see [intended usage](usage.html).
 
 *****
 
